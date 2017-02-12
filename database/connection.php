@@ -1,11 +1,14 @@
 <?php
-class Connection {
+
+class Connection 
+{
 	$DB_HOST = "localhost";
 	$DB_USER = "admin";
 	$DB_PASSWORD = "admin";
 	$db;
 
-	__constructor() {
+	__construct() 
+	{
 		// Create connection
 		$this->db = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD);
 
@@ -14,4 +17,5 @@ class Connection {
 			die("Connection failed: " . $this->db->connect_error);
 		}
 	}
+	
 }
