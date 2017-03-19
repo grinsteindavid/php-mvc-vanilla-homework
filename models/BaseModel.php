@@ -61,4 +61,20 @@ class BaseModel
 		$sql = "DELETE FROM ".$this->table." WHERE id = ".$id.";";
 		return $this->db->query($sql);
 	}
+
+	public function update($id, $attributes)
+	{
+		$sql = "UPDATE ".$this->table." SET ";
+		$numAttributes = count($attributes);
+		$counter = 0;
+		foreach ($attributes as $key => $value) {
+			if ($counter === $numAttributes) {
+				$sql .= $key."= '".$value."'";
+			} else {
+				$sql .= $key."= '".$value."',";
+			}
+		}
+		$sql .= " WHERE id = ".$id.";";
+		return $this->db->query($sql);
+	}
 }
