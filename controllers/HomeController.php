@@ -1,25 +1,26 @@
 <?php
 require_once 'BaseController.php';
-//require_once '../models/People.php';
+require_once '/../models/User.php';
 
 /**
-* 
+*
 */
 class HomeController extends BaseController
 {
-  
-  function __construct()
+
+  public function __construct()
   {
     # code...
   }
 
-  public function test()
+  public function index()
   {
-    //$data['client'] = People::find(1);
+    $data['clients'] = (new User())->all();
     $data['value1'] = $this->str_random();
     $data['value2'] = $this->str_random();
 
     return $data;
+    //$this->redirect('contact');
   }
 }
 

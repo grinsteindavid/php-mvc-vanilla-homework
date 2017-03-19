@@ -1,0 +1,32 @@
+$icon-font-path: '../fonts/';
+
+// BOOTSTRAP 3
+@import "sass-bootstrap/_bootstrap.scss";
+// BOOTSTRAP CUSTOM CONFIG
+@import "navbar";
+@import "footer";
+
+// Font-Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// jssocials
+@import "node_modules/jssocials/styles/jssocials";
+@import "node_modules/jssocials/styles/jssocials-theme-plain";
+
+// BaguetteBox.js
+@import "node_modules/baguettebox.js/src/baguetteBox";
+
+// Modaal is a WCAG 2.0 Level AA accessible modal window plugin.
+@import "../plugins/Modaal-master/dist/css/modaal.scss";
+
+// Slick Carousel
+@import "slick-carousel/slick";
+@import "slick-carousel/slick-theme";
+@import "slick-carousel/announces";
+@import "slick-carousel/events";
+
+// Custom Styles
+@import "general";
+@import "overlayText";
+@import "animations";
+@import "transitions";

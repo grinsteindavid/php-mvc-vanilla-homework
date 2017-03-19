@@ -1,0 +1,31 @@
+/**********************************
+ ImgLiquidFill Initialize, jQuery plugin to resize images to fit in a container.
+***********************************/
+
+.imgLiquidFill .imgLiquid,
+.imgLiquidFill,
+.imgLiquid {
+  opacity: 0;
+}
+
+/**********************************
+Responsive navbar-brand image CSS
+- Remove navbar-brand padding for firefox bug workaround
+- add 100% height and width auto ... similar to how bootstrap img-responsive class works
+***********************************/
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 5px;
+  width: auto;
+}
+
+/**********************************
+ Modaal Plugin Custom style
+***********************************/
+.modaal-video-wrap {
+  margin: 0;
+}

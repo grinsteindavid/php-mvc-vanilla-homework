@@ -1,6 +1,6 @@
 <?php
   require_once '../../controllers/HomeController.php';
-  $data = $homeController->test();
+  $data = $homeController->index();
 	$title = "HOME";
   include "../header.php";
 ?>
@@ -8,18 +8,18 @@
 <div class="container">
   <div class="header">
   	<ul class="nav nav-pills pull-right">
-  	  <li class="active"><a href="#">Home</a></li>
+  	  <li class="active"><a href="home.php">Home</a></li>
   	  <li><a href="#">About</a></li>
-  	  <li><a href="#">Contact</a></li>
+  	  <li><a href="contact.php">Contact</a></li>
   	</ul>
   	<h3 class="text-muted">jquery proj</h3>
   </div>
 
   <div class="jumbotron">
-  	<h1 id="username"></h1>
-    <h2>client: <?= $data['client'] ?></h2>
-    <h2>value1: <?= $data['value1'] ?></h2>
-    <h2>value2: <?= $data['value2'] ?></h2>
+    <?php include "../tables/user.php"; ?>
+
+    <h2>random value1: <?= $data['value1'] ?></h2>
+    <h2>random value2: <?= $data['value2'] ?></h2>
   	<p class="lead">Always a pleasure scaffolding your apps.</p>
   	<p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
   </div>
@@ -36,6 +36,4 @@
   </div>
 </div>
 
-<?php
-	include "../footer.php";
-?>
+<?php include "../footer.php"; ?>

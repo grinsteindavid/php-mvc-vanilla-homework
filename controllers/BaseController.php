@@ -1,8 +1,8 @@
 <?php
 
 Class BaseController {
-	
-	public function str_random($length = 10) 
+
+	public function str_random($length = 10)
 	{
 		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$charactersLength = strlen($characters);
@@ -15,7 +15,14 @@ Class BaseController {
 
 	public function redirect($url, $statusCode = 303)
 	{
-		header('Location: '.$url, true, $statusCode);
+		if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
+			$uri = 'https://';
+		} else {
+			$uri = 'http://';
+		}
+		$uri .= $_SERVER['HTTP_HOST'];
+
+		header('Location: '.$uri.'/php-mvc/views/pages/'.$url.'.php', true, $statusCode);
 		die();
 	}
 

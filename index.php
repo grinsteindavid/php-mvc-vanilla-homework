@@ -5,7 +5,7 @@
 		$uri = 'http://';
 	}
 	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/views/pages/home.php');
+	header('Location: '.$uri.'/php-mvc/views/pages');
 	exit;
 ?>
-Something is wrong with the server :-(
+Something is wrong with the XAMPP installation :-(
