@@ -1,0 +1,10 @@
+{
+    "name": "david/php-mvc",
+    "authors": [
+        {
+            "name": "david miranda",
+            "email": "davidmirandagrinstein@gmail.com"
+        }
+    ],
+    "require": {}
+}
