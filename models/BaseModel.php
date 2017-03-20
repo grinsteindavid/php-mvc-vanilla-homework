@@ -73,6 +73,7 @@ class BaseModel
 			} else {
 				$sql .= $key."= '".$value."',";
 			}
+			$counter++;
 		}
 		$sql .= " WHERE id = ".$id.";";
 		return $this->db->query($sql);
