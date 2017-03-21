@@ -3,10 +3,12 @@
   include "../header.php";
 ?>
 
+<?php include "../navbar.php" ?>
+
 <div class="container">
   <div class="jumbotron">
     <h1>contact</h1>
   </div>
 </div>
 
-<?php include "../footer.php"; ?>
+<?php include "../footer.php" ?>

@@ -29,6 +29,7 @@ class BaseModel
 		for ($i = 0; $i < $result->num_rows; $i++) {
 			$data[$i] = $result->fetch_assoc();
 		}
+		$this->db->close();
 		return $data;
 	}
 
@@ -59,14 +60,39 @@ class BaseModel
 	public function destroy($id)
 	{
 		$sql = "DELETE FROM ".$this->table." WHERE id = ".$id.";";
-		return $this->db->query($sql);
+		$status = $this->db->query($sql);
+		$this->db->close();
+		return $status;
+	}
+
+	public function insert($attributes)
+	{
+		$sql = "INSERT INTO ".$this->table." ";
+		$sqlKeys = "(";
+		$sqlValues = "VALUES (";
+		$numAttributes = count($attributes);
+		$counter = 1;
+		foreach ($attributes as $key => $value) {
+			if ($counter === $numAttributes) {
+				$sqlKeys .= $key.")";
+				$sqlValues .= "'".$value."')";
+			} else {
+				$sqlKeys .= $key.",";
+				$sqlValues .= "'".$value."',";
+			}
+			$counter++;
+		}
+		$sql .= $sqlKeys." ".$sqlValues.";";
+		$status = $this->db->query($sql);
+		$this->db->close();
+		return $status;
 	}
 
 	public function update($id, $attributes)
 	{
 		$sql = "UPDATE ".$this->table." SET ";
 		$numAttributes = count($attributes);
-		$counter = 0;
+		$counter = 1;
 		foreach ($attributes as $key => $value) {
 			if ($counter === $numAttributes) {
 				$sql .= $key."= '".$value."'";
@@ -76,6 +102,8 @@ class BaseModel
 			$counter++;
 		}
 		$sql .= " WHERE id = ".$id.";";
-		return $this->db->query($sql);
+		$status = $this->db->query($sql);
+		$this->db->close();
+		return $status;
 	}
 }

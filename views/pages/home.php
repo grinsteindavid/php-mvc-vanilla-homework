@@ -5,6 +5,8 @@
   include "../header.php";
 ?>
 
+<?php include "../navbar.php" ?>
+
 <div class="container">
 
   <div class="header">
@@ -17,7 +19,7 @@
   </div>
 
   <div class="jumbotron">
-    <?php include "../tables/user.php"; ?>
+    <?php include "../tables/users.php" ?>
 
     <h2>random value1: <?= $data['value1'] ?></h2>
     <h2>random value2: <?= $data['value2'] ?></h2>
@@ -37,4 +39,4 @@
   </div>
 </div>
 
-<?php include "../footer.php"; ?>
+<?php include "../footer.php" ?>
