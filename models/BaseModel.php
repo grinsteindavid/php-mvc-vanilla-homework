@@ -22,7 +22,7 @@ class BaseModel
 		}
 	}
 
-	public function build($sql)
+	public function buildCollection($sql)
 	{
 		$result = $this->db->query($sql);
 		$data = null;
@@ -33,15 +33,34 @@ class BaseModel
 		return $data;
 	}
 
+	public function build($sql)
+	{
+		$result = $this->db->query($sql)->fetch_assoc();
+		$this->db->close();
+		return $result;
+	}
+
 	public function all()
 	{
 		$sql = "SELECT * FROM ".$this->table.";";
-		return $this->build($sql);
+		return $this->buildCollection($sql);
 	}
 
 	public function find($id)
 	{
 		$sql = "SELECT * FROM ".$this->table." WHERE id = ".$id.";";
+		return $this->build($sql);
+	}
+
+	public function first()
+	{
+		$sql = "SELECT id FROM ".$this->table." ORDER BY id ASC LIMIT 1;";
+		return $this->build($sql);
+	}
+
+	public function last()
+	{
+		$sql = "SELECT id FROM ".$this->table." ORDER BY id DESC LIMIT 1;";
 		return $this->build($sql);
 	}
 
@@ -71,8 +90,9 @@ class BaseModel
 		$sqlKeys = "(";
 		$sqlValues = "VALUES (";
 		$numAttributes = count($attributes);
-		$counter = 1;
+		$counter = 0;
 		foreach ($attributes as $key => $value) {
+			$counter++;
 			if ($counter === $numAttributes) {
 				$sqlKeys .= $key.")";
 				$sqlValues .= "'".$value."')";
@@ -80,7 +100,6 @@ class BaseModel
 				$sqlKeys .= $key.",";
 				$sqlValues .= "'".$value."',";
 			}
-			$counter++;
 		}
 		$sql .= $sqlKeys." ".$sqlValues.";";
 		$status = $this->db->query($sql);
@@ -92,14 +111,14 @@ class BaseModel
 	{
 		$sql = "UPDATE ".$this->table." SET ";
 		$numAttributes = count($attributes);
-		$counter = 1;
+		$counter = 0;
 		foreach ($attributes as $key => $value) {
+			$counter++;
 			if ($counter === $numAttributes) {
 				$sql .= $key."= '".$value."'";
 			} else {
 				$sql .= $key."= '".$value."',";
 			}
-			$counter++;
 		}
 		$sql .= " WHERE id = ".$id.";";
 		$status = $this->db->query($sql);

@@ -16,7 +16,9 @@ class HomeController extends BaseController
   public function index()
   {
     //(new User)->insert(['email' => '12345@email.com', 'password' => $this->str_random()]);
-    (new User)->update(2, ['email' => '12345@email.com', 'password' => $this->str_random()]);
+    //(new User)->destroy(2);
+    //(new User)->find(2);
+    (new User)->update(2, ['password' => $this->str_random()]);
     $data['clients'] = (new User())->all();
     $data['value1'] = $this->str_random();
     $data['value2'] = $this->str_random();
