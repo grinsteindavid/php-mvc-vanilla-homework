@@ -1,6 +1,12 @@
 <?php
+require_once 'helpers.php';
 
 Class BaseController {
+
+	public function __construct()
+  {
+    session_start();
+  }
 
 	public function str_random($length = 10)
 	{

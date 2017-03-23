@@ -22,6 +22,7 @@ class HomeController extends BaseController
     $data['clients'] = (new User())->all();
     $data['value1'] = $this->str_random();
     $data['value2'] = $this->str_random();
+    set_session('alert-success', 'It works!');
 
     return $data;
     //$this->redirect('contact');
