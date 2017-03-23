@@ -1,18 +1,20 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Email</th>
-      <th>Password</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($data['clients'] as $client): ?>
+<div class="table-responsive">
+  <table class="table table-hover table-condensed">
+    <thead>
       <tr>
-        <td><?= $client['id'] ?></td>
-        <td><?= $client['email'] ?></td>
-        <td><?= $client['password'] ?></td>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Password</th>
       </tr>
-    <?php endforeach ?>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <?php foreach ($data['clients'] as $client): ?>
+        <tr>
+          <td><?= $client['id'] ?></td>
+          <td><?= $client['email'] ?></td>
+          <td><?= $client['password'] ?></td>
+        </tr>
+      <?php endforeach ?>
+    </tbody>
+  </table>
+</div>

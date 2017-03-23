@@ -16,7 +16,6 @@ require('bootstrap-sass');
  */
 require('slick-carousel');
 require('jssocials');
-require('../bower_vendor/imgLiquid/js/imgLiquid');
 window.baguetteBox = require('baguettebox.js');
 require('../plugins/Modaal-master/dist/js/modaal.js');
 
