@@ -9,12 +9,6 @@
 
 <div class="container">
 
-  <div class="jumbotron">
-    <?php include "../tables/users.php" ?>
-
-    <h2>random value1: <?= $data['value1'] ?></h2>
-    <h2>random value2: <?= $data['value2'] ?></h2>
-  </div>
 </div>
 
 <?php include "../footer.php" ?>

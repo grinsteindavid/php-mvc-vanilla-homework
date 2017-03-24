@@ -26,8 +26,10 @@ class BaseModel
 	{
 		$result = $this->db->query($sql);
 		$data = null;
-		for ($i = 0; $i < $result->num_rows; $i++) {
-			$data[$i] = $result->fetch_assoc();
+		if ($result) {
+			for ($i = 0; $i < $result->num_rows; $i++) {
+				$data[$i] = $result->fetch_assoc();
+			}
 		}
 		$this->db->close();
 		return $data;

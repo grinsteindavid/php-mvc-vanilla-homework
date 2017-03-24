@@ -18,3 +18,16 @@ function session_has($name)
     return false;
   }
 }
+
+function route_is($name)
+{
+  $uri = $_SERVER['SCRIPT_NAME'];
+  $route = null;
+  for ($i = strlen($uri) - 1; $i > 0; $i--) {
+    if ($uri[$i] !== '/') {
+      $route .= $uri[$i];
+    } else {
+      return (strrev($route) === $name);
+    }
+  }
+}

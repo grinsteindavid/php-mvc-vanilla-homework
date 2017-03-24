@@ -9,8 +9,12 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-	<!-- build:css styles/main.css -->
+	 <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="../../public/css/app.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="../../public/js/app.js"></script>
     <!-- endbuild -->
   </head>
   <body>

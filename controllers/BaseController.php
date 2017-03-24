@@ -19,7 +19,7 @@ Class BaseController {
 		return $randomString;
 	}
 
-	public function redirect($url, $statusCode = 303)
+	public function redirect($url)
 	{
 		if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
 			$uri = 'https://';
@@ -28,8 +28,10 @@ Class BaseController {
 		}
 		$uri .= $_SERVER['HTTP_HOST'];
 
-		header('Location: '.$uri.'/php-mvc/views/pages/'.$url.'.php', true, $statusCode);
-		die();
+		session_regenerate_id(true);
+		header('Location: '.$uri.'/php-mvc/views/pages/'.$url.'.php');
+		session_write_close();
+		exit();
 	}
 
 }

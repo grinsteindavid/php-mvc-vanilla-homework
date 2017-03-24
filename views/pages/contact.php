@@ -1,4 +1,6 @@
 <?php
+  require_once '../../controllers/ContactController.php';
+  $data = $contactController->index();
   $title = "CONTACT";
   include "../header.php";
 ?>
