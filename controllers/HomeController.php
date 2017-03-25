@@ -1,6 +1,5 @@
 <?php
 require_once 'BaseController.php';
-require_once '/../models/User.php';
 
 /**
 *

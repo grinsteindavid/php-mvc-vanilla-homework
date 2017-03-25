@@ -1,6 +1,5 @@
 <?php
 require_once 'BaseController.php';
-require_once '/../models/User.php';
 
 /**
 *
@@ -10,7 +9,7 @@ class ContactController extends BaseController
 
   public function __construct()
   {
-    # code...
+    $this->authorize();
   }
 
   public function index()

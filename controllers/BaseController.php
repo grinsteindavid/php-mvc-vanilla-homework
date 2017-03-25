@@ -1,7 +1,9 @@
 <?php
 require_once 'helpers.php';
+require_once '/../models/User.php';
 
 Class BaseController {
+	public $redirect_to = 'home';
 
 	public function __construct()
   {
@@ -32,6 +34,18 @@ Class BaseController {
 		header('Location: '.$uri.'/php-mvc/views/pages/'.$url.'.php');
 		session_write_close();
 		exit();
+	}
+
+	public function authorize()
+	{
+		if (isset($_COOKIE['user'])) {
+			$user = $_COOKIE['user'];
+			$user = (new User)->find($user['id']);
+			if (!$user) return $this->redirect($this->redirect_to);
+			return true;
+		} else {
+			$this->redirect($this->redirect_to);
+		}
 	}
 
 }
