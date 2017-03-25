@@ -11,7 +11,11 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="jumbotron text-center">
-        <h1>Hello world</h1>
+        <?php if ($data['user']): ?>
+          <h1><?= $data['user']['name'] ?></h1>
+        <?php else: ?>
+          <h1>Hello world</h1>
+        <?php endif ?>
       </div>
     </div>
   </div>

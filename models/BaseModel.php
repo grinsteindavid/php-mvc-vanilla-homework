@@ -59,13 +59,13 @@ class BaseModel
 	public function where($key, $value)
 	{
 		$sql = "SELECT * FROM ".$this->table." WHERE ".$key." = ".$value.";";
-		return $this->build($sql);
+		return $this->buildCollection($sql);
 	}
 
 	public function whereNot($key, $value)
 	{
 		$sql = "SELECT * FROM ".$this->table." WHERE ".$key." <> ".$value.";";
-		return $this->build($sql);
+		return $this->buildCollection($sql);
 	}
 
 	public function destroy($id)

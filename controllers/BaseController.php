@@ -39,12 +39,40 @@ Class BaseController {
 	public function authorize()
 	{
 		if (isset($_COOKIE['user'])) {
-			$user = $_COOKIE['user'];
-			$user = (new User)->find($user['id']);
-			if (!$user) return $this->redirect($this->redirect_to);
-			return true;
+			$token = $_COOKIE['user'];
+			$user = (new User)->where('token', $token);
+			if ($user) {
+				return true;
+			} else {
+				return $this->redirect($this->redirect_to);
+			}
 		} else {
 			$this->redirect($this->redirect_to);
+		}
+	}
+
+	public function authenticate($email, $password)
+	{
+		$user = (new User())->where('email', $email);
+		if ($user && $user[0]['password'] === $password) {
+			return $user[0]['token'];
+		} else {
+			return false;
+		}
+	}
+
+	public function is_auth()
+	{
+		if (isset($_COOKIE['user'])) {
+			$token = $_COOKIE['user'];
+			$user = (new User)->where('token', $token);
+			if ($user) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
 		}
 	}
 

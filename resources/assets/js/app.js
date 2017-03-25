@@ -27,6 +27,9 @@ $(function main() {
   // Initialize dropify to upload files.
   $('[type="file"]').dropify();
 
+  // Initialize Bootstrap tooltip.
+  $('[data-toggle="tooltip"]').tooltip();
+
   // Initialize MagicFit to render pictures inside divs.
   MagicFit.run();
   $(window).resize(() => MagicFit.resize());

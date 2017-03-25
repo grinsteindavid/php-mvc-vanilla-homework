@@ -3,6 +3,7 @@ CREATE TABLE users
 id int AUTO_INCREMENT NOT NULL,
 email varchar(255) NOT NULL UNIQUE,
 password varchar(255) NOT NULL,
+token varchar(50) NOT NULL UNIQUE,
 created_at varchar(255) NOT NULL,
 
 PRIMARY KEY (id)
