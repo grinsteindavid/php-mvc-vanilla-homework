@@ -20,11 +20,11 @@ PRIMARY KEY (id)
 
 CREATE TABLE user_event
 (
-id_user int NOT NULL,
-id_event int NOT NULL,
+user_id int NOT NULL,
+event_id int NOT NULL,
 
-FOREIGN KEY (id_user) REFERENCES users(id),
-FOREIGN KEY (id_event) REFERENCES events(id)
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (event_id) REFERENCES events(id)
 );
 
 CREATE TABLE vouchers
@@ -39,9 +39,9 @@ PRIMARY KEY (id)
 
 CREATE TABLE user_voucher
 (
-id_user int NOT NULL,
-id_voucher int NOT NULL,
+user_id int NOT NULL,
+voucher_id int NOT NULL,
 
-FOREIGN KEY (id_user) REFERENCES users(id),
-FOREIGN KEY (id_voucher) REFERENCES vouchers(id)
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (voucher_id) REFERENCES vouchers(id)
 );
