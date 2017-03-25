@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li class="<?= route_is('events.php')? 'active' : null ?>"><a href="events.php">Events</a></li>
+        <li class="<?= route_is('event_index.php')? 'active' : null ?>"><a href="event_index.php">Events</a></li>
         <li class="<?= route_is('contact.php')? 'active' : null ?>"><a href="contact.php">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

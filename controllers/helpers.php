@@ -1,5 +1,16 @@
 <?php
 
+function request($name)
+{
+  if (isset($_GET[$name])) {
+    return $_GET[$name];
+  } elseif (isset($_POST[$name])) {
+    return $_POST[$name];
+  } else {
+    return null;
+  }
+}
+
 function set_session($name, $value)
 {
   $_SESSION[$name] = $value;

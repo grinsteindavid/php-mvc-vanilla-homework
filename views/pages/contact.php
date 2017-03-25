@@ -6,10 +6,13 @@
 ?>
 
 <?php include "../navbar.php" ?>
+<?php include "../alerts/header.php" ?>
 
 <div class="container">
-  <div class="jumbotron">
-    <h1>contact</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+    </div>
   </div>
 </div>
 

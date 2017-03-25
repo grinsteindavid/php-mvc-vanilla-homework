@@ -1,4 +1,5 @@
 <?php
+require_once '/../database/Connection.php';
 
 class BaseModel
 {
@@ -7,19 +8,7 @@ class BaseModel
 
 	public function __construct()
 	{
-		$host = "localhost";
-		$user = "admin";
-		$password = "admin";
-		$database = "ciudad_konecta";
-		$port = 3306;
-
-		// Create connection
-		$this->db = new mysqli($host, $user, $password, $database, $port);
-
-		// Check connection
-		if ($this->db->connect_error) {
-			die("Connection failed: " . $this->db->connect_error);
-		}
+		$this->db = (new Connection())->db;
 	}
 
 	public function buildCollection($sql)
@@ -37,7 +26,8 @@ class BaseModel
 
 	public function build($sql)
 	{
-		$result = $this->db->query($sql)->fetch_assoc();
+		$result = $this->db->query($sql);
+		if ($result) $result = $result->fetch_assoc();
 		$this->db->close();
 		return $result;
 	}
