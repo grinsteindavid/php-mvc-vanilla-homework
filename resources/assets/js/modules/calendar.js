@@ -36,6 +36,7 @@
       url: route.calendar,
       type: 'GET',
       success: function(data, textStatus, xhr) {
+        $('.custom-calendar-wrap').toggleClass('hidden');
         Calendar = container.calendario({
           caldata: data.calendar,
           format: 'MM-DD-YYYY',
@@ -67,6 +68,13 @@
       },
       error: function(xhr, textStatus, errorThrown) {
         //called when there is an error
+        $('#calendar-alert').append(`
+          <div class="alert alert-warning alert-dismissable fade in col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3" style="margin-top: 50px">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <strong>Warning!</strong> There are no events yet.
+          </div>
+        `);
       }
     });
   };

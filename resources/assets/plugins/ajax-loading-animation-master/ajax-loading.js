@@ -65,12 +65,7 @@
         //loading img/gif
         imgPath    : 'http://7xjke9.com1.z0.glb.clouddn.com/ajax-loading.gif',
         imgWidth   : '45px',
-        imgHeight  : '45px',
-
-        //loading text
-        tip        : 'loading...',
-        fontSize   : '14px',
-        fontColor  : '#fff'
+        imgHeight  : '45px'
     };
 
     function init (opts) {
@@ -104,7 +99,7 @@
         var html = `
             <div class="" id="`+opts.id+`" style="`+wrapCss+`">
                 <img src="`+opts.imgPath+`" style="`+imgCss+`">
-            </div>'
+            </div>
         `;
 
         $(document).find('body').append(html);

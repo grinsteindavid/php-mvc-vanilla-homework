@@ -1,4 +1,4 @@
-(function main() {
+(function() {
 
   var container = $('#photos-container');
   var config = {
@@ -10,8 +10,9 @@
     baguetteBox.run('#photos-container', config);
   };
 
-  if (container.length) {
+  var main = function() {
     updatePhotoContainer();
-  }
+  };
 
+  return render(container, main);
 })();

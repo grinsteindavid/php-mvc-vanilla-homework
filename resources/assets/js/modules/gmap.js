@@ -42,5 +42,5 @@
     fetchData();
   };
 
-  return render(container, main)
+  return render(container, main);
 })();

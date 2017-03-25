@@ -6,7 +6,6 @@
 ?>
 
 <?php include "../navbar.php" ?>
-<?php include "../alerts/header.php" ?>
 
 <div class="container">
   <div class="row">

@@ -6,10 +6,9 @@
 ?>
 
 <?php include "../navbar.php" ?>
-<?php include "../alerts/header.php" ?>
 
 <div class="container">
-  <div class="row">
+  <div class="row" style="margin: 35px 0 10px 0">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <?php include "../tables/events.php" ?>
     </div>

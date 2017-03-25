@@ -7,18 +7,13 @@
     "heroku": "gulp --production && git add . && git commit -m 'heroku' && git push heroku master"
   },
   "devDependencies": {
-    "baguettebox.js": "^1.8.1",
-    "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
+    "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
-    "jquery-ujs": "^1.2.2",
-    "jssocials": "^1.4.0",
     "laravel-elixir": "^6.0.0-14",
     "laravel-elixir-webpack-official": "^1.0.2",
-    "lodash": "^4.16.2",
-    "modaal": "^0.3.1",
-    "slick-carousel": "^1.6.0"
+    "lodash": "^4.16.2"
   },
   "eslintConfig": {
     "env": {
@@ -29,6 +24,14 @@
     "rules": {}
   },
   "dependencies": {
-    "toastr": "^2.1.2"
+    "toastr": "^2.1.2",
+    "baguettebox.js": "^1.8.1",
+    "modaal": "^0.3.1",
+    "bootstrap-validator": "^0.11.9",
+    "dropify": "^0.2.1",
+    "gmaps": "^0.4.24",
+    "slick-carousel": "^1.6.0",
+    "jquery-ujs": "^1.2.2",
+    "jssocials": "^1.4.0"
   }
 }

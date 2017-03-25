@@ -14,13 +14,22 @@ require('bootstrap-sass');
 /**
  * Plugins
  */
+require('bootstrap-validator');
 require('slick-carousel');
+require('toastr');
+require('dropify');
 require('jssocials');
+require('../plugins/Calendario-master/js/jquery.calendario');
+require('../plugins/ajax-loading-animation-master/ajax-loading.js');
 window.baguetteBox = require('baguettebox.js');
 require('../plugins/Modaal-master/dist/js/modaal.js');
+window.GMaps = require('gmaps');
 
 /**
  *  Custom Plugins
  */
 require('./modules/ajaxLoadingAnimation');
 require('./modules/infiniteScroll/infiniteSpy');
+require('./modules/magicFit');
+require('./modules/css/transitions');
+require('./modules/css/animations');

@@ -1,0 +1,7 @@
+window.Animations = {
+  update: function() {
+
+
+
+  }
+};

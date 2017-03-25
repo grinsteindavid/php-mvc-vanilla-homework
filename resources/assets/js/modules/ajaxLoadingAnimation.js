@@ -19,9 +19,6 @@ window.ajaxLoading = $.loading({
   imgPath    : '/css/ajax-loader.gif',
   imgWidth   : '25px',
   imgHeight  : '25px',
-
-  //loading text
-  tip        : '',
   //text font size
   fontSize   : '14px',
   //text font color
