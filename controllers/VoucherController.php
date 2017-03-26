@@ -10,7 +10,7 @@ class VoucherController extends BaseController
 
   public function __construct()
   {
-    # code...
+    $this->authorize();
   }
 
   public function index()
@@ -71,4 +71,4 @@ class VoucherController extends BaseController
   }
 }
 
-$voucherController = new VoucherController();
+$controller = new VoucherController();

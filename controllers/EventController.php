@@ -10,7 +10,7 @@ class EventController extends BaseController
 
   public function __construct()
   {
-
+    $this->authorize();
   }
 
   public function index()
@@ -71,4 +71,4 @@ class EventController extends BaseController
   }
 }
 
-$eventController = new EventController();
+$controller = new EventController();

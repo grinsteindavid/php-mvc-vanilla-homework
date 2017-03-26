@@ -1,6 +1,6 @@
 <?php
   require_once '../../controllers/EventController.php';
-  $data = $eventController->index();
+  $data = $controller->index();
   $title = "Events";
   include "../header.php";
 ?>

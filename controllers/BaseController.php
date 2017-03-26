@@ -3,7 +3,7 @@ require_once 'helpers.php';
 require_once '/../models/User.php';
 
 Class BaseController {
-	public $redirect_to = 'home';
+	public $redirect_to = 'login';
 
 	public function __construct()
   {
@@ -60,9 +60,9 @@ Class BaseController {
 
 	public function authenticate($email, $password)
 	{
-		$user = (new User())->where('email', $email);
-		if ($user && $user['password'] === $password) {
-			return $user['token'];
+		$user = (new User)->where('email', $email);
+		if ($user[0]['password'] === $password) {
+			return $user[0]['token'];
 		} else {
 			return false;
 		}
@@ -70,16 +70,15 @@ Class BaseController {
 
 	public function is_auth()
 	{
-		if (isset($_COOKIE['user'])) {
-			$token = $_COOKIE['user'];
-			$user = (new User)->where('token', $token);
-			if ($user) {
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			return false;
+		if (isset($_COOKIE['user']) && $_COOKIE['user'] !== 'null') {
+			return $this->redirect($this->redirect_to);
+		}
+	}
+
+	public function is_login()
+	{
+		if (isset($_COOKIE['user']) && $_COOKIE['user'] !== 'null') {
+			return true;
 		}
 	}
 

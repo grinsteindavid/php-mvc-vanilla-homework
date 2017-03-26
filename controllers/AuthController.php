@@ -14,12 +14,12 @@ class AuthController extends BaseController
 
   public function login()
   {
-    if ($this->is_auth()) return $this->redirect($this->redirect_to);
+    $this->is_auth();
     $token = $this->authenticate(request('email'), request('password'));
     if ($token) {
       $day = 86400;
-      setcookie('user', $token, time() + ($day * 30));
-      return $this->redirect('home');
+      setcookie('user', $token, time() + ($day * 30), '/');
+      return $this->redirect('profile');
     }
     set_session('alert-warning', 'Your user credentials provided were incorrect.');
     return $this->redirect('login');
@@ -28,15 +28,14 @@ class AuthController extends BaseController
   public function logout()
   {
     if (isset($_COOKIE['user'])) {
-      unset($_COOKIE['user']);
-      setcookie("user", null, 1, '/');
+      setcookie("user", 'null', -1, '/');
     }
     return $this->redirect($this->redirect_to);
   }
 
   public function register()
   {
-    if ($this->is_auth()) return $this->redirect($this->redirect_to);
+    $this->is_auth();
     $token = null;
     while (true) {
       $token = $this->str_random(50);
@@ -51,11 +50,11 @@ class AuthController extends BaseController
     if ($status) {
       $day = 86400;
       setcookie('user', $token, time() + ($day * 30), '/');
-      return $this->redirect('home');
+      return $this->redirect('profile');
     }
     set_session('alert-warning', 'Your user email credential provided already exist.');
     return $this->redirect('register');
   }
 }
 
-$authController = new AuthController();
+$controller = new AuthController();

@@ -1,6 +1,6 @@
 <?php
   require_once '../../controllers/VoucherController.php';
-  $data = $voucherController->show();
+  $data = $controller->show();
   $title = "Voucher - " . ($data['voucher']['name']? $data['voucher']['name'] : 'not found.');
   include "../header.php";
 ?>

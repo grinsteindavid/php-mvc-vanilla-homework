@@ -2,4 +2,4 @@
 
 require_once '../../../controllers/VoucherController.php';
 
-$voucherController->create();
+$controller->create();

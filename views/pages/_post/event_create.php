@@ -2,4 +2,4 @@
 
 require_once '../../../controllers/EventController.php';
 
-$eventController->create();
+$controller->create();

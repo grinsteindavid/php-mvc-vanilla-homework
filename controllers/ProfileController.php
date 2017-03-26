@@ -4,7 +4,7 @@ require_once 'BaseController.php';
 /**
 *
 */
-class ContactController extends BaseController
+class ProfileController extends BaseController
 {
 
   public function __construct()
@@ -14,8 +14,9 @@ class ContactController extends BaseController
 
   public function index()
   {
-
+    return null;
   }
+
 }
 
-$contactController = new ContactController();
+$controller = new ProfileController();

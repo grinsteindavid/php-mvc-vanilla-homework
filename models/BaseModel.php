@@ -46,25 +46,25 @@ class BaseModel
 
 	public function first()
 	{
-		$sql = "SELECT id FROM ".$this->table." ORDER BY id ASC LIMIT 1;";
+		$sql = "SELECT * FROM ".$this->table." ORDER BY id ASC LIMIT 1;";
 		return $this->build($sql);
 	}
 
 	public function last()
 	{
-		$sql = "SELECT id FROM ".$this->table." ORDER BY id DESC LIMIT 1;";
+		$sql = "SELECT * FROM ".$this->table." ORDER BY id DESC LIMIT 1;";
 		return $this->build($sql);
 	}
 
 	public function where($key, $value)
 	{
-		$sql = "SELECT * FROM ".$this->table." WHERE ".$key." = ".$value.";";
+		$sql = "SELECT * FROM ".$this->table." WHERE ".$key." = '".$value."';";
 		return $this->buildCollection($sql);
 	}
 
 	public function whereNot($key, $value)
 	{
-		$sql = "SELECT * FROM ".$this->table." WHERE ".$key." <> ".$value.";";
+		$sql = "SELECT * FROM ".$this->table." WHERE ".$key." <> '".$value."';";
 		return $this->buildCollection($sql);
 	}
 

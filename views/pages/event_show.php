@@ -1,6 +1,6 @@
 <?php
   require_once '../../controllers/EventController.php';
-  $data = $eventController->show();
+  $data = $controller->show();
   $title = "Event - " . ($data['event']['name']? $data['event']['name'] : 'not found.');
   include "../header.php";
 ?>

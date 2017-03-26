@@ -1,6 +1,6 @@
 <?php
   require_once '../../controllers/VoucherController.php';
-  $data = $voucherController->index();
+  $data = $controller->index();
   $title = "Vouchers";
   include "../header.php";
 ?>
