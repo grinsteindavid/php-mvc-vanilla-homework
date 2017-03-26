@@ -11,6 +11,11 @@ function request($name)
   }
 }
 
+function dd($data)
+{
+  return var_dump($data);
+}
+
 function set_session($name, $value)
 {
   $_SESSION[$name] = $value;

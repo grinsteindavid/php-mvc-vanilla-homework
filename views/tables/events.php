@@ -18,7 +18,7 @@
             </td>
             <td><?= $event['created_at'] ?></td>
             <td>
-              <a href="_get/destroy_event.php?id=<?= $event['id'] ?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Delete this event.">
+              <a href="_get/destroy_event.php?id=<?= $event['id'] ?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Delete this event." sweet-alert="link">
                 <i class="fa fa-times-circle"></i>
               </a>
               <a href="event_edit.php?id=<?= $event['id'] ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modify this event.">

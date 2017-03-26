@@ -39,7 +39,28 @@
   };
 
   var main = function() {
-    container.slick(slickConfig);
+    $.ajax({
+      url: '_json/user_voucher.php',
+      type: 'POST',
+      data: {token: Cookies.get('user')},
+      success: function(data, textStatus, xhr) {
+        //called when successful
+        $.each(JSON.parse(data), function(index, voucher) {
+          container.append(`
+            <a href="voucher_show.php?id=${voucher.id}" class="text-center">
+              <div><i class="fa fa-vcard-o" style="font-size: 12rem"></i></div>
+            </a>
+          `);
+        });
+        container.slick(slickConfig);
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        //called when there is an error
+        container.append(`
+          <h3 class="text-center">There is not associated vouchers.</h3>
+        `);
+      }
+    });
   };
 
   return render(container, main);

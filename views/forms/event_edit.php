@@ -11,5 +11,5 @@
     <textarea class="form-control" rows="5" name="description" required><?= $data['event']['description'] ?></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary">Send changes</button>
+  <button type="button" class="btn btn-primary" sweet-alert="form">Send changes</button>
 </form>

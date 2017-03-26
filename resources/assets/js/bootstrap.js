@@ -24,6 +24,8 @@ require('../plugins/ajax-loading-animation-master/ajax-loading.js');
 window.baguetteBox = require('baguettebox.js');
 require('../plugins/Modaal-master/dist/js/modaal.js');
 window.GMaps = require('gmaps');
+window.swal = require('sweetalert2');
+window.Cookies = require('js-cookie');
 
 /**
  *  Custom Plugins
@@ -31,5 +33,6 @@ window.GMaps = require('gmaps');
 require('./modules/ajaxLoadingAnimation');
 require('./modules/infiniteScroll/infiniteSpy');
 require('./modules/magicFit');
+require('./modules/confirm-alerts');
 require('./modules/css/transitions');
 require('./modules/css/animations');

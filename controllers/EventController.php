@@ -61,6 +61,7 @@ class EventController extends BaseController
 
   public function destroy()
   {
+    (new Event)->disassociate('user_event', 'event_id', request('id'));
     $data['event'] = (new Event)->destroy(request('id'));
     if ($data['event']) {
       set_session('alert-success', 'Event deleted successfully.');

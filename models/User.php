@@ -6,11 +6,11 @@ class User extends BaseModel {
 
   public function events($user_id)
   {
-    return $this->join('user_event', 'user_id', $user_id);
+    return $this->many_to_many('user_event', 'user_id', $user_id, 'events','event_id');
   }
 
   public function vouchers($user_id)
   {
-    return $this->join('user_voucher', 'voucher_id', $user_id);
+    return $this->many_to_many('user_voucher', 'user_id', $user_id, 'vouchers', 'voucher_id');
   }
 }

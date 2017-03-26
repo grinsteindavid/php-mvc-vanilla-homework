@@ -61,6 +61,7 @@ class VoucherController extends BaseController
 
   public function destroy()
   {
+    (new Voucher)->disassociate('user_vocuher', 'vocuher_id', request('id'));
     $data['voucher'] = (new Voucher)->destroy(request('id'));
     if ($data['voucher']) {
       set_session('alert-success', 'Voucher deleted successfully.');

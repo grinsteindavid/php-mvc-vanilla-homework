@@ -40,7 +40,28 @@
   };
 
   var main = function() {
-    container.slick(slickConfig);
+    $.ajax({
+      url: '_json/user_event.php',
+      type: 'POST',
+      data: {token: Cookies.get('user')},
+      success: function(data, textStatus, xhr) {
+        //called when successful
+        $.each(JSON.parse(data), function(index, event) {
+          container.append(`
+            <a href="event_show.php?id=${event.id}" class="text-center">
+              <div><i class="fa fa-calendar" style="font-size: 12rem"></i></div>
+            </a>
+          `);
+        });
+        container.slick(slickConfig);
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        //called when there is an error
+        container.append(`
+          <h3 class="text-center">There is not associated events.</h3>
+        `);
+      }
+    });
   };
 
   return render(container, main);

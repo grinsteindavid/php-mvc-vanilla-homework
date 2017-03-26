@@ -16,9 +16,29 @@ class ProfileController extends BaseController
   {
     $token = $_COOKIE['user'];
     $data['user'] = (new User)->where('token', $token)[0];
-    $data['events'] = (new User)->events($data['user']['id']);
-    $data['vouchers'] = (new User)->vouchers($data['user']['id']);
     return $data;
+  }
+
+  public function json_events()
+  {
+    $user = (new User)->where('token', request('token'))[0];
+    $data = (new User)->events($user['id']);
+    if ($data) {
+      return json_encode($data);
+    } else {
+      return $this->abort();
+    }
+  }
+
+  public function json_vouchers()
+  {
+    $user = (new User)->where('token', request('token'))[0];
+    $data = (new User)->vouchers($user['id']);
+    if ($data) {
+      return json_encode($data);
+    } else {
+      return $this->abort();
+    }
   }
 
 }

@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="profile.php">
-        <i class="fa fa-group" style="font-size: 28px"></i>
+        <i class="fa fa-address-book" style="font-size: 28px"></i>
       </a>
     </div>
 

@@ -8,9 +8,9 @@
   </div>
   <div class="panel-footer">
     <h3 class="text-center">My Events</h3>
-    <?php include '../carousels/events.php'; ?>
+    <div id="carousel-events" style="margin: 0 0 90px 0"></div>
 
     <h3 class="text-center">My Vouchers</h3>
-    <?php include '../carousels/vouchers.php'; ?>
+    <div id="carousel-vouchers" style="margin: 0 0 60px 0"></div>
   </div>
 </div>

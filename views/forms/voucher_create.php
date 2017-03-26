@@ -10,5 +10,6 @@
     <textarea class="form-control" rows="5" name="description" required></textarea>
   </div>
 
-  <button type="submit" hidden></button>
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary" sweet-alert="form">Save changes</button>
 </form>

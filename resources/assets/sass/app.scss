@@ -1,29 +1,32 @@
 $icon-font-path: '../fonts/';
 
-// BOOTSTRAP 3
+// BOOTSTRAP 3.
 @import "sass-bootstrap/_bootstrap.scss";
-// BOOTSTRAP CUSTOM CONFIG
+// BOOTSTRAP CUSTOM CONFIG.
 //@import "navbar";
 //@import "footer";
 
-// Font-Awesome
+// Font-Awesome.
 @import "node_modules/font-awesome/scss/font-awesome";
 
-// jssocials
+// jssocials.
 @import "node_modules/jssocials/styles/jssocials";
 @import "node_modules/jssocials/styles/jssocials-theme-plain";
 
 // BaguetteBox.js
 @import "node_modules/baguettebox.js/src/baguetteBox";
 
+// An awesome and accessible (WAI-ARIA) replacement for JavaScript's popup boxes.
+@import "sweetalert2.css";
+
 // Modaal is a WCAG 2.0 Level AA accessible modal window plugin.
 @import "../plugins/Modaal-master/dist/css/modaal.scss";
 
-// Slick Carousel
+// Slick Carousel.
 @import "slick-carousel/slick";
 @import "slick-carousel/slick-theme";
 
-// Custom Styles
+// Custom Styles.
 @import "general";
 @import "overlayText";
 @import "animations";

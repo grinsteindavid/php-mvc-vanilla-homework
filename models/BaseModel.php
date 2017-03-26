@@ -118,11 +118,22 @@ class BaseModel
 		return $status;
 	}
 
-	public function join($to_join, $to_compare, $id)
+	public function many_to_many($table_from, $attr_from, $this_id, $table_to, $attr_to)
 	{
-		$sql = "SELECT * FROM ".$to_join." INNER JOIN ".$this->table." ON ";
-		$sql .= $to_join.".".$to_compare." = ".$this->table.".id ";
-		$sql .= "WHERE ".$to_join.".".$to_compare."='".$id."';";
+		$sql = "SELECT * FROM ".$table_from;
+		$sql .= " INNER JOIN ".$this->table." ON ".$table_from.".".$attr_from." = ".$this->table.".id";
+		$sql .= " INNER JOIN ".$table_to." ON ".$table_to.".id = ".$table_from.".".$attr_to;
+		$sql .= " WHERE ".$table_from.".".$attr_from." = '".$this_id."';";
 		return $this->buildCollection($sql);
 	}
+
+	public function disassociate($table_to, $attr_to, $this_id)
+	{
+		$sql = "DELETE FROM ".$table_to;
+		$sql .= " WHERE ".$table_to.".".$attr_to." = '".$this_id."';";
+		$status = $this->db->query($sql);
+		$this->db->close();
+		return $status;
+	}
+
 }
