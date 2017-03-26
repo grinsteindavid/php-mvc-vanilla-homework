@@ -1,4 +1,5 @@
 <?php
+  require_once '../../controllers/AuthController.php';
   $title = "User login";
   include "../header.php";
 ?>

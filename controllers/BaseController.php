@@ -36,6 +36,13 @@ Class BaseController {
 		exit();
 	}
 
+	public function abort()
+	{
+		header('HTTP/1.1 503 Service Temporarily Unavailable');
+		header('Status: 503 Service Temporarily Unavailable');
+		exit();
+	}
+
 	public function authorize()
 	{
 		if (isset($_COOKIE['user'])) {
@@ -54,8 +61,8 @@ Class BaseController {
 	public function authenticate($email, $password)
 	{
 		$user = (new User())->where('email', $email);
-		if ($user && $user[0]['password'] === $password) {
-			return $user[0]['token'];
+		if ($user && $user['password'] === $password) {
+			return $user['token'];
 		} else {
 			return false;
 		}

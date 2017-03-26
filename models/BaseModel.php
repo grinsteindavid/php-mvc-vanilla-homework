@@ -8,7 +8,7 @@ class BaseModel
 
 	public function __construct()
 	{
-		$this->db = (new Connection())->db;
+		$this->db = (new Connection)->db;
 	}
 
 	public function buildCollection($sql)
