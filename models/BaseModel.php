@@ -117,4 +117,12 @@ class BaseModel
 		$this->db->close();
 		return $status;
 	}
+
+	public function join($to_join, $to_compare, $id)
+	{
+		$sql = "SELECT * FROM ".$to_join." INNER JOIN ".$this->table." ON ";
+		$sql .= $to_join.".".$to_compare." = ".$this->table.".id ";
+		$sql .= "WHERE ".$to_join.".".$to_compare."='".$id."';";
+		return $this->buildCollection($sql);
+	}
 }

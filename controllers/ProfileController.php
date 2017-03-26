@@ -14,7 +14,11 @@ class ProfileController extends BaseController
 
   public function index()
   {
-    return null;
+    $token = $_COOKIE['user'];
+    $data['user'] = (new User)->where('token', $token)[0];
+    $data['events'] = (new User)->events($data['user']['id']);
+    $data['vouchers'] = (new User)->vouchers($data['user']['id']);
+    return $data;
   }
 
 }

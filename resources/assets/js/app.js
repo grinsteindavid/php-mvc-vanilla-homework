@@ -39,5 +39,6 @@ $(function main() {
   Transitions.update();
 
   // Modules
-
+  require('./modules/slick-carousel/events');
+  require('./modules/slick-carousel/vouchers');
 });

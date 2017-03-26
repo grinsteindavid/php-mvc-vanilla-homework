@@ -39,12 +39,12 @@ class AuthController extends BaseController
     $token = null;
     while (true) {
       $token = $this->str_random(50);
-      $users = (new User())->where('token', $token);
+      $users = (new User)->where('token', $token);
       if (!$users) {
         break;
       }
     }
-    $status = (new User())->insert([
+    $status = (new User)->insert([
       'email' => request('email'), 'password' => request('password'), 'token' => $token, 'created_at' => date("d/m/Y")
     ]);
     if ($status) {

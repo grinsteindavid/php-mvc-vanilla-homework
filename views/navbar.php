@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="home.php">
+      <a class="navbar-brand" href="profile.php">
         <i class="fa fa-group" style="font-size: 28px"></i>
       </a>
     </div>
@@ -19,6 +19,7 @@
         <li class="<?= route_is('event_index.php')? 'active' : null ?>"><a href="event_index.php">Events</a></li>
         <li class="<?= route_is('voucher_index.php')? 'active' : null ?>"><a href="voucher_index.php">Vouchers</a></li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <?php if ($controller->is_login()): ?>
           <li><a href="_get/logout.php">Logout</a></li>
@@ -26,16 +27,6 @@
           <li><a href="register.php">Register</a></li>
           <li><a href="login.php">Login</a></li>
         <?php endif ?>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
