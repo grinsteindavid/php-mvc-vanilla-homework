@@ -24,6 +24,9 @@
               <a href="voucher_edit.php?id=<?= $voucher['id'] ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modify this voucher.">
                 <i class="fa fa-edit"></i>
               </a>
+              <a href="_get/voucher_associate_user.php?id=<?= $voucher['id'] ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Associate you to this voucher.">
+                <i class="fa fa-exchange"></i>
+              </a>
             </td>
           </tr>
         <?php endforeach ?>

@@ -61,7 +61,7 @@ class VoucherController extends BaseController
 
   public function destroy()
   {
-    (new Voucher)->disassociate('user_vocuher', 'vocuher_id', request('id'));
+    (new Voucher)->disassociate('user_voucher', 'voucher_id', request('id'));
     $data['voucher'] = (new Voucher)->destroy(request('id'));
     if ($data['voucher']) {
       set_session('alert-success', 'Voucher deleted successfully.');
@@ -69,6 +69,19 @@ class VoucherController extends BaseController
       set_session('alert-warning', 'The voucher doesn\'t exist.');
     }
     return $this->redirect('voucher_index');
+  }
+
+  public function associate_user()
+  {
+    $token = $_COOKIE['user'];
+    $user = (new User)->where('token', $token)[0];
+    $status = (new Voucher)->add_user($user['id'], request('id'));
+    if ($status) {
+      set_session('alert-success', 'Voucher association successfully.');
+    } else {
+      set_session('alert-warning', 'The voucher doesn\'t exist.');
+    }
+    $this->redirect('profile');
   }
 }
 

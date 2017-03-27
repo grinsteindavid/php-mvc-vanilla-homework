@@ -70,6 +70,19 @@ class EventController extends BaseController
     }
     return $this->redirect('event_index');
   }
+
+  public function associate_user()
+  {
+    $token = $_COOKIE['user'];
+    $user = (new User)->where('token', $token)[0];
+    $status = (new Event)->add_user($user['id'], request('id'));
+    if ($status) {
+      set_session('alert-success', 'Event association successfully.');
+    } else {
+      set_session('alert-warning', 'The event doesn\'t exist.');
+    }
+    $this->redirect('profile');
+  }
 }
 
 $controller = new EventController();

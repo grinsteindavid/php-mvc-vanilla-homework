@@ -24,6 +24,9 @@
               <a href="event_edit.php?id=<?= $event['id'] ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modify this event.">
                 <i class="fa fa-edit"></i>
               </a>
+              <a href="_get/event_associate_user.php?id=<?= $event['id'] ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Associate you to this event.">
+                <i class="fa fa-exchange"></i>
+              </a>
             </td>
           </tr>
         <?php endforeach ?>
