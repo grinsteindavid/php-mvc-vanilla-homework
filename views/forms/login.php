@@ -10,5 +10,5 @@
     <input type="password" class="form-control" name="password" required>
   </div>
 
-  <button type="button" class="btn btn-primary">Login</button>
+  <button type="submit" class="btn btn-primary">Login</button>
 </form>

@@ -4,6 +4,7 @@ require_once '/../models/User.php';
 
 Class BaseController {
 	public $redirect_to = 'login';
+	public $root = 'profile';
 
 	public function __construct()
   {
@@ -71,7 +72,7 @@ Class BaseController {
 	public function is_auth()
 	{
 		if (isset($_COOKIE['user']) && $_COOKIE['user'] !== 'null') {
-			return $this->redirect($this->redirect_to);
+			return $this->redirect($this->root);
 		}
 	}
 

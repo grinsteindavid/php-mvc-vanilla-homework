@@ -18,7 +18,7 @@
             </td>
             <td><?= $voucher['created_at'] ?></td>
             <td>
-              <a href="_get/destroy_voucher.php?id=<?= $voucher['id'] ?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Delete this voucher.">
+              <a href="_get/destroy_voucher.php?id=<?= $voucher['id'] ?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Delete this voucher." sweet-alert="link">
                 <i class="fa fa-times-circle"></i>
               </a>
               <a href="voucher_edit.php?id=<?= $voucher['id'] ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modify this voucher.">
