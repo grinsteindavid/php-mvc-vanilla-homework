@@ -35,6 +35,4 @@
   </table>
 </div>
 
-<a class="btn btn-primary" data-toggle="modal" href='#create-voucher'>Create</a>
-
 <?php include '../modals/voucher_create.php'; ?>

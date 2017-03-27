@@ -35,6 +35,4 @@
   </table>
 </div>
 
-<a class="btn btn-primary" data-toggle="modal" href='#create-event'>Create</a>
-
 <?php include '../modals/event_create.php'; ?>
