@@ -10,5 +10,5 @@
     <input type="password" class="form-control" name="password" required>
   </div>
 
-  <button type="submit" class="btn btn-primary" sweet-alert="form">Register</button>
+  <button type="button" class="btn btn-primary" sweet-alert="form">Register</button>
 </form>
